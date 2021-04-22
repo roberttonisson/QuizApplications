@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApp</name>
+    </assembly>
+    <members>
+        <member name="T:WebApp.ApiControllers._1._0.FeedbacksController">
+            <summary>
+            Controller for Feedbacks
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.FeedbacksController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.FeedbacksController.GetFeedbacks">
+            <summary>
+            Get the list of all Feedbacks .
+            </summary>
+            <returns>List of Feedbacks</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.FeedbacksController.GetFeedback(System.Guid)">
+            <summary>
+            Get single Feedback by given id
+            </summary>
+            <param name="id">Id of the Feedback that we are returning</param>
+            <returns>Feedback</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.FeedbacksController.PutFeedback(System.Guid,BLL.App.DTO.Feedback)">
+            <summary>
+            Change existing Feedback by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the Feedback from DB</param>
+            <param name="feedback"></param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.FeedbacksController.PostFeedback(BLL.App.DTO.Feedback)">
+            <summary>
+            Add a new Feedback to the DB.
+            </summary>
+            <param name="feedback"></param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.FeedbacksController.DeleteFeedback(System.Guid)">
+            <summary>
+            Deletes a Feedback record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.Identity.AccountController">
+            <summary>
+            Api endpoint for registering new user and user log-in (jwt token generation)
+            </summary>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.Identity.LoginDTO">
+            <summary>
+            DTO for login validation
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.LoginDTO.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.LoginDTO.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.Identity.RegisterDTO">
+            <summary>
+            DTO for register validation
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.RegisterDTO.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.RegisterDTO.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.RegisterDTO.FirstName">
+            <summary>
+            First name
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.RegisterDTO.LastName">
+            <summary>
+            Last name
+            </summary>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.Identity.ChangePasswordDTO">
+            <summary>
+            DTO for changing password
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.ChangePasswordDTO.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.ChangePasswordDTO.OldPassword">
+            <summary>
+            Old password
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.ChangePasswordDTO.NewPassword">
+            <summary>
+            Password that we want to change to
+            </summary>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.Identity.ChangeEmailDTO">
+            <summary>
+            DTO for changing email
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.ChangeEmailDTO.Email">
+            <summary>
+            Old email
+            </summary>
+        </member>
+        <member name="P:WebApp.ApiControllers._1._0.Identity.ChangeEmailDTO.NewEmail">
+            <summary>
+            New email
+            </summary>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.QuestionAnswersController">
+            <summary>
+            Controller for QuestionAnswers
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.GetQuestionAnswers">
+            <summary>
+            Get the list of all QuestionAnswers .
+            </summary>
+            <returns>List of QuestionAnswers</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.GetQuestionAnswer(System.Guid)">
+            <summary>
+            Get single QuestionAnswer by given id
+            </summary>
+            <param name="id">Id of the QuestionAnswer that we are returning</param>
+            <returns>QuestionAnswer</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.PutQuestionAnswer(System.Guid,BLL.App.DTO.QuestionAnswer)">
+            <summary>
+            Change existing QuestionAnswer by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the QuestionAnswer from DB</param>
+            <param name="questionAnswer">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.PostQuestionAnswer(BLL.App.DTO.QuestionAnswer)">
+            <summary>
+            Add a new QuestionAnswer to the DB.
+            </summary>
+            <param name="questionAnswer">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.PostQuestionAnswerList(BLL.App.DTO.QuestionAnswer[])">
+            <summary>
+            Add a new QuestionAnswer list to the DB.
+            </summary>
+            <param name="questionAnswers">DTO list with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuestionAnswersController.DeleteQuestionAnswer(System.Guid)">
+            <summary>
+            Deletes a QuestionAnswer record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.QuizController">
+            <summary>
+            Controller for Quizzes
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.#ctor(Contracts.BLL.App.IAppBLL,Microsoft.AspNetCore.Identity.UserManager{Models.Identity.AppUser})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.GetQuizzes">
+            <summary>
+            Get the list of all Quizzes .
+            </summary>
+            <returns>List of Quizzes</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.GetUserWithQuizzes">
+            <summary>
+            Get the list of all Quizzes .
+            </summary>
+            <returns>List of Quizzes</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.GetQuiz(System.Guid)">
+            <summary>
+            Get single Quiz by given id
+            </summary>
+            <param name="id">Id of the Quiz that we are returning</param>
+            <returns>Quiz</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.PutQuiz(System.Guid,BLL.App.DTO.Quiz)">
+            <summary>
+            Change existing Quiz by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the Quiz from DB</param>
+            <param name="quiz">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.PostQuiz(BLL.App.DTO.Quiz)">
+            <summary>
+            Add a new Quiz to the DB.
+            </summary>
+            <param name="quiz">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.DeleteQuiz(System.Guid)">
+            <summary>
+            Deletes a Quiz record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.QuizInvitationsController">
+            <summary>
+            Controller for QuizInvitations
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.GetQuizInvitations">
+            <summary>
+            Get the list of all QuizInvitations .
+            </summary>
+            <returns>List of QuizInvitations</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.GetQuizInvitation(System.Guid)">
+            <summary>
+            Get single QuizInvitation by given id
+            </summary>
+            <param name="id">Id of the QuizInvitation that we are returning</param>
+            <returns>QuizInvitation</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.PutQuizInvitation(System.Guid,BLL.App.DTO.QuizInvitation)">
+            <summary>
+            Change existing QuizInvitation by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the QuizInvitation from DB</param>
+            <param name="quizInvitation">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.PostQuizInvitation(BLL.App.DTO.QuizInvitation)">
+            <summary>
+            Add a new QuizInvitation to the DB.
+            </summary>
+            <param name="quizInvitation">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.DeleteQuizInvitation(System.Guid)">
+            <summary>
+            Deletes a QuizInvitation record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.QuizTopicsController">
+            <summary>
+            Controller for QuizTopics
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizTopicsController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizTopicsController.GetQuizTopics">
+            <summary>
+            Get the list of all QuizTopics .
+            </summary>
+            <returns>List of QuizTopics</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizTopicsController.GetQuizTopic(System.Guid)">
+            <summary>
+            Get single QuizTopic by given id
+            </summary>
+            <param name="id">Id of the QuizTopic that we are returning</param>
+            <returns>QuizTopic</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizTopicsController.PutQuizTopic(System.Guid,BLL.App.DTO.QuizTopic)">
+            <summary>
+            Change existing QuizTopic by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the QuizTopic from DB</param>
+            <param name="quizTopic">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizTopicsController.PostQuizTopic(BLL.App.DTO.QuizTopic)">
+            <summary>
+            Add a new QuizTopic to the DB.
+            </summary>
+            <param name="quizTopic">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizTopicsController.DeleteQuizTopic(System.Guid)">
+            <summary>
+            Deletes a QuizTopic record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.SavedQuestionsController">
+            <summary>
+            Controller for SavedQuestions
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.SavedQuestionsController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.SavedQuestionsController.GetSavedQuestions">
+            <summary>
+            Get the list of all SavedQuestions .
+            </summary>
+            <returns>List of SavedQuestions</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.SavedQuestionsController.GetSavedQuestion(System.Guid)">
+            <summary>
+            Get single SavedQuestion by given id
+            </summary>
+            <param name="id">Id of the SavedQuestion that we are returning</param>
+            <returns>SavedQuestion</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.SavedQuestionsController.PutSavedQuestion(System.Guid,BLL.App.DTO.SavedQuestion)">
+            <summary>
+            Change existing SavedQuestion by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the SavedQuestion from DB</param>
+            <param name="savedQuestion">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.SavedQuestionsController.PostSavedQuestion(BLL.App.DTO.SavedQuestion)">
+            <summary>
+            Add a new SavedQuestion to the DB.
+            </summary>
+            <param name="savedQuestion">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.SavedQuestionsController.DeleteSavedQuestion(System.Guid)">
+            <summary>
+            Deletes a SavedQuestion record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.TeamAnswersController">
+            <summary>
+            Controller for TeamAnswers
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.GetTeamAnswers">
+            <summary>
+            Get the list of all TeamAnswers .
+            </summary>
+            <returns>List of TeamAnswers</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.GetTeamAnswer(System.Guid)">
+            <summary>
+            Get single TeamAnswer by given id
+            </summary>
+            <param name="id">Id of the TeamAnswer that we are returning</param>
+            <returns>TeamAnswer</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.PutTeamAnswer(System.Guid,BLL.App.DTO.TeamAnswer)">
+            <summary>
+            Change existing TeamAnswer by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the TeamAnswer from DB</param>
+            <param name="teamAnswer">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.PostTeamAnswer(BLL.App.DTO.TeamAnswer)">
+            <summary>
+            Add a new TeamAnswer to the DB.
+            </summary>
+            <param name="teamAnswer">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.DeleteTeamAnswer(System.Guid)">
+            <summary>
+            Deletes a TeamAnswer record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.TeamsController">
+            <summary>
+            Controller for Teams
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.GetTeams">
+            <summary>
+            Get the list of all Teams .
+            </summary>
+            <returns>List of Teams</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.GetTeam(System.Guid)">
+            <summary>
+            Get single Team by given id
+            </summary>
+            <param name="id">Id of the Team that we are returning</param>
+            <returns>Team</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.PutTeam(System.Guid,BLL.App.DTO.Team)">
+            <summary>
+            Change existing Team by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the Team from DB</param>
+            <param name="team">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.PostTeam(BLL.App.DTO.Team)">
+            <summary>
+            Add a new Team to the DB.
+            </summary>
+            <param name="team">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.DeleteTeam(System.Guid)">
+            <summary>
+            Deletes a Team record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.TeamUsersController">
+            <summary>
+            Controller for TeamUsers
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamUsersController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamUsersController.GetTeamUsers">
+            <summary>
+            Get the list of all TeamUsers .
+            </summary>
+            <returns>List of TeamUsers</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamUsersController.GetTeamUser(System.Guid)">
+            <summary>
+            Get single TeamUser by given id
+            </summary>
+            <param name="id">Id of the TeamUser that we are returning</param>
+            <returns>TeamUser</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamUsersController.PutTeamUser(System.Guid,BLL.App.DTO.TeamUser)">
+            <summary>
+            Change existing TeamUser by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the TeamUser from DB</param>
+            <param name="teamUser">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamUsersController.PostTeamUser(BLL.App.DTO.TeamUser)">
+            <summary>
+            Add a new TeamUser to the DB.
+            </summary>
+            <param name="teamUser">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamUsersController.DeleteTeamUser(System.Guid)">
+            <summary>
+            Deletes a TeamUser record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.TopicQuestionsController">
+            <summary>
+            Controller for TopicQuestions
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TopicQuestionsController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TopicQuestionsController.GetTopicQuestions">
+            <summary>
+            Get the list of all TopicQuestions .
+            </summary>
+            <returns>List of TopicQuestions</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TopicQuestionsController.GetTopicQuestion(System.Guid)">
+            <summary>
+            Get single TopicQuestion by given id
+            </summary>
+            <param name="id">Id of the TopicQuestion that we are returning</param>
+            <returns>TopicQuestion</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TopicQuestionsController.PutTopicQuestion(System.Guid,BLL.App.DTO.TopicQuestion)">
+            <summary>
+            Change existing TopicQuestion by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the TopicQuestion from DB</param>
+            <param name="topicQuestion">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TopicQuestionsController.PostTopicQuestion(BLL.App.DTO.TopicQuestion)">
+            <summary>
+            Add a new TopicQuestion to the DB.
+            </summary>
+            <param name="topicQuestion">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TopicQuestionsController.DeleteTopicQuestion(System.Guid)">
+            <summary>
+            Deletes a TopicQuestion record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.ApiControllers._1._0.UserFriendsController">
+            <summary>
+            Controller for UserFriends
+            </summary>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.#ctor(Contracts.BLL.App.IAppBLL)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bll"></param>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.GetUserFriends">
+            <summary>
+            Get the list of all UserFriends .
+            </summary>
+            <returns>List of UserFriends</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.GetUserFriend(System.Guid)">
+            <summary>
+            Get single UserFriend by given id
+            </summary>
+            <param name="id">Id of the UserFriend that we are returning</param>
+            <returns>UserFriend</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.GetUserWithFriends">
+            <summary>
+            Get single user with freinds colelctions by given id
+            </summary>
+            <param name="id">Id of the user that we are returning</param>
+            <returns>User</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.PutUserFriend(System.Guid,BLL.App.DTO.UserFriend)">
+            <summary>
+            Change existing UserFriend by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the UserFriend from DB</param>
+            <param name="userFriend">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.PostUserFriend(BLL.App.DTO.UserFriend)">
+            <summary>
+            Add a new UserFriend to the DB.
+            </summary>
+            <param name="userFriend">DTO with the values for the record tha will be inserted into DB.</param>
+            <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.SearchUsers(BLL.App.DTO.CustomDTO.SearchDTO)">
+            <summary>
+            Search for users.
+            </summary>
+            <param name="search">String with search parameters.</param>
+            <returns>All Users from DB by criteria.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.DeleteUserFriend(System.Guid)">
+            <summary>
+            Deletes a UserFriend record from the DB by id.
+            </summary>
+            <param name="id">Id for the record that will be removed from the DB.</param>
+            <returns>:)</returns>
+        </member>
+        <member name="T:WebApp.Startup">
+            <summary>
+            Startup Class
+            </summary>
+        </member>
+        <member name="M:WebApp.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:WebApp.Startup.Configuration">
+            <summary>
+            Configurations
+            </summary>
+        </member>
+        <member name="M:WebApp.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WebApp.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="provider"></param>
+        </member>
+    </members>
+</doc>

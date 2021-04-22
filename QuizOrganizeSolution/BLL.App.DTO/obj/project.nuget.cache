@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "+pJJ0fazieK8Xjipj2lf4k0MfE3abioFaIKgFyT/x6dIN43+OPYVe2r/kloFqg0BFZPel3runfXlJN97CbjDUA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rober\\Documents\\Proge\\QuizOrganizeSolution\\BLL.App.DTO\\BLL.App.DTO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rober\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\identityserver4.storage\\4.1.0\\identityserver4.storage.4.1.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.5\\microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.5\\microsoft.aspnetcore.cryptography.keyderivation.5.0.5.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.5\\microsoft.extensions.identity.core.5.0.5.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.5\\microsoft.extensions.identity.stores.5.0.5.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.2\\microsoft.identitymodel.jsonwebtokens.6.10.2.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.2\\microsoft.identitymodel.logging.6.10.2.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.2\\microsoft.identitymodel.tokens.6.10.2.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.2\\system.identitymodel.tokens.jwt.6.10.2.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
