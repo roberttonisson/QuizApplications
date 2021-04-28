@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.App.DTO;
 using BLL.App.DTO.Identity;
 using BLL.App.Mappers;
 using BLL.Base.Services;
@@ -22,6 +23,37 @@ namespace BLL.App.Services
         public UserFriendService(IAppUnitOfWork uow) : base(uow, uow.UserFriends,
             new BLLMapper<DAL.App.DTO.UserFriend, BLL.App.DTO.UserFriend>())
         {
+        }
+
+        public async Task<UserFriend> SendFriendRequest(UserFriend userFriend, Guid? userId = null,
+            bool noTracking = true)
+        {
+            var uf = await GetExistingRequest(userFriend);
+            if (uf == null)
+            {
+                if (userFriend.AppUserId == userFriend.RecipientId)
+                {
+                    return userFriend;
+                }
+                Add(userFriend);
+                await UOW.SaveChangesAsync();
+                return userFriend;
+            }
+            if (uf.Accepted)
+            {
+                return uf;
+            }
+
+            if (uf.Pending)
+            {
+                return uf;
+            }
+
+            uf.Pending = true;
+            await UpdateAsync(uf);
+
+            await UOW.SaveChangesAsync();
+            return uf;
         }
 
         public async Task<IEnumerable<AppUser>> SearchUsers(string search, Guid? userId = null,
@@ -60,12 +92,18 @@ namespace BLL.App.Services
                 {
                     dic.Add(new BaseMapper<DAL.App.DTO.Identity.AppUser, AppUser>().Map(user), counter);
                 }
-                
             }
 
             var myList = dic.ToList();
             myList = myList.OrderByDescending(a => a.Value).ToList();
             return myList.Select(u => u.Key).ToList();
+        }
+
+        public async Task<UserFriend> GetExistingRequest(UserFriend userFriend, Guid? userId = null,
+            bool noTracking = true)
+        {
+            var uf = await Repository.GetExistingRequest(userFriend, userId, noTracking);
+            return Mapper.Map(uf);
         }
     }
 }

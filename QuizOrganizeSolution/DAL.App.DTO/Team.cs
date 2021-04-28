@@ -7,7 +7,7 @@ using Domain.Base;
 
 namespace DAL.App.DTO
 {
-    public class Team : DomainEntityId, IDomainEntityUser<AppUser>
+    public class Team : DomainEntityId
     {
         [Required] 
         public Guid QuizId { get; set; } = default!;

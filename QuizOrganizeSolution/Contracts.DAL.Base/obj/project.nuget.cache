@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DzVK0swgqjzhkuTgHgcEuzHrbCaZ9pBSsDf7YFFD/+EJWXyRFNpMYFP8nquYGB2LT+TkA96TPhqpybhQuBLj4g==",
+  "dgSpecHash": "ov5VBQDRGK74MG5OFecbQ8PIPekkCbPjJnhDgvK1qK/fzdFg0pEBTC45TbRzHZdve+dTclovEuGYPkdhCc9DRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rober\\Documents\\Proge\\QuizOrganizeSolution\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj",
+  "projectFilePath": "C:\\Users\\rober\\Documents\\Proge\\QuizOrganize\\QuizOrganizeSolution\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rober\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.5\\microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",
     "C:\\Users\\rober\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.5\\microsoft.aspnetcore.cryptography.keyderivation.5.0.5.nupkg.sha512",

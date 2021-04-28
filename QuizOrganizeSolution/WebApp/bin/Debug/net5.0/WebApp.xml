@@ -204,6 +204,12 @@
             <summary>
             Get the list of all Quizzes .
             </summary>
+            <returns>User with quizzes</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizController.GetFriendQuizzes">
+            <summary>
+            Get the list of all frinds quizzes
+            </summary>
             <returns>List of Quizzes</returns>
         </member>
         <member name="M:WebApp.ApiControllers._1._0.QuizController.GetQuiz(System.Guid)">
@@ -260,6 +266,14 @@
             <returns>QuizInvitation</returns>
         </member>
         <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.PutQuizInvitation(System.Guid,BLL.App.DTO.QuizInvitation)">
+            <summary>
+            Change existing QuizInvitation by given ID
+            </summary>
+            <param name="id">Given ID that we use to find the QuizInvitation from DB</param>
+            <param name="quizInvitation">DTO with new values tha we need to change</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.QuizInvitationsController.PutQuizInvitationAddTeamUser(System.Guid,BLL.App.DTO.QuizInvitation)">
             <summary>
             Change existing QuizInvitation by given ID
             </summary>
@@ -405,11 +419,11 @@
             <param name="teamAnswer">DTO with new values tha we need to change</param>
             <returns>Nothing</returns>
         </member>
-        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.PostTeamAnswer(BLL.App.DTO.TeamAnswer)">
+        <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.PostTeamAnswer(BLL.App.DTO.TeamAnswer[])">
             <summary>
             Add a new TeamAnswer to the DB.
             </summary>
-            <param name="teamAnswer">DTO with the values for the record tha will be inserted into DB.</param>
+            <param name="teamAnswers">DTO with the values for the record tha will be inserted into DB.</param>
             <returns>DTO with the values from the record that was added to the DB.</returns>
         </member>
         <member name="M:WebApp.ApiControllers._1._0.TeamAnswersController.DeleteTeamAnswer(System.Guid)">
@@ -457,6 +471,13 @@
             </summary>
             <param name="team">DTO with the values for the record tha will be inserted into DB.</param>
             <returns>DTO with the values from the record that was added to the DB.</returns>
+        </member>
+        <member name="M:WebApp.ApiControllers._1._0.TeamsController.PostTeam(BLL.App.DTO.CustomDTO.AddTeamDTO)">
+            <summary>
+            Add a new Team to and its members invitations to the DB.
+            </summary>
+            <param name="addTeamDto">DTO with the values for the records that will be inserted into DB.</param>
+            <returns>Team that was added to the DB.</returns>
         </member>
         <member name="M:WebApp.ApiControllers._1._0.TeamsController.DeleteTeam(System.Guid)">
             <summary>
@@ -583,9 +604,8 @@
         </member>
         <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.GetUserWithFriends">
             <summary>
-            Get single user with freinds colelctions by given id
+            Get single user with friends collections by given id
             </summary>
-            <param name="id">Id of the user that we are returning</param>
             <returns>User</returns>
         </member>
         <member name="M:WebApp.ApiControllers._1._0.UserFriendsController.PutUserFriend(System.Guid,BLL.App.DTO.UserFriend)">

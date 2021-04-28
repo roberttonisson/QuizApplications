@@ -64,9 +64,8 @@ namespace WebApp.ApiControllers._1._0
         }
         // GET: api/UserFriends/5
         /// <summary>
-        /// Get single user with freinds colelctions by given id
+        /// Get single user with friends collections by given id
         /// </summary>
-        /// <param name="id">Id of the user that we are returning</param>
         /// <returns>User</returns>
         [HttpGet("myFriends")]
         public async Task<ActionResult<AppUserCustomDTO>> GetUserWithFriends()
@@ -117,10 +116,8 @@ namespace WebApp.ApiControllers._1._0
         [HttpPost]
         public async Task<ActionResult<UserFriend>> PostUserFriend(UserFriend userFriend)
         {
-            _bll.UserFriends.Add(userFriend);
-            await _bll.SaveChangesAsync();
-
-            return Ok(userFriend);
+            var uf = await _bll.UserFriends.SendFriendRequest(userFriend);
+            return Ok(uf);
         }
         
         // POST: api/UserFriends
@@ -136,6 +133,7 @@ namespace WebApp.ApiControllers._1._0
         {
             return Ok(await _bll.UserFriends.SearchUsers(search.Search));
         }
+        
 
         // DELETE: api/UserFriends/5
         /// <summary>

@@ -30,7 +30,8 @@ namespace DAL.App.EF.Repositories
                 .ThenInclude(b => b.Team)
                 .ThenInclude(c => c.Quiz)
                 .Include(a => a.TeamUsers)
-                .ThenInclude(b => b.Team);
+                .ThenInclude(b => b.Team)
+                .ThenInclude(c => c.Quiz);
             
             var domainEntity = await query.FirstOrDefaultAsync();
             var result = Mapper.Map(domainEntity);

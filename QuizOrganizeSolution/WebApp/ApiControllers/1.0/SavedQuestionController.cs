@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.App.DTO;
 using Contracts.BLL.App;
+using Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.ApiControllers._1._0
@@ -34,7 +35,7 @@ namespace WebApp.ApiControllers._1._0
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SavedQuestion>>> GetSavedQuestions()
         {
-            var savedQuestions = (await _bll.SavedQuestions.GetAllAsync(null));
+            var savedQuestions = (await _bll.SavedQuestions.GetAllAsync(User.UserGuidId()));
             
             return Ok(savedQuestions);
         }

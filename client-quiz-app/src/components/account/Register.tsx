@@ -61,7 +61,7 @@ const Register = () => {
                                 type="text"
                                 name="lastName"
                             />
-                            <button className="btn btn-primary" type="submit">Register</button>
+                            <button className="btn button-bg-purple-dark" type="submit">Register</button>
                         </form>
                     </div>
                 </div>

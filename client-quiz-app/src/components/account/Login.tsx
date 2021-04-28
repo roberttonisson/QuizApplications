@@ -52,7 +52,7 @@ const Login = () => {
                                 name="password"
                                 onChange={(e) => handleChange(e.target)}
                             />
-                            <button className="btn btn-primary" type="submit">Log in</button>
+                            <button className="btn button-bg-purple-dark" type="submit">Log in</button>
                         </form>
                     </div>
                 </div>

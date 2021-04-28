@@ -7,7 +7,7 @@ export interface ITeamUserDTO extends IBaseDomain {
     teamId: string;
     team?: ITeamDTO;
 
-    appuserId: string;
+    appUserId: string;
     appUser?: IAppUserDTO;
 
     feedback?: IFeedbackDTO[];

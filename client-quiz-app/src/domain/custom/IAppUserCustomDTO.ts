@@ -9,7 +9,7 @@ export interface IAppUserCustomDTO extends IBaseDomain {
     firstName: string;
     lastName: string;
 
-    sentrequests: IUserFriendDTO[];
+    sentRequests: IUserFriendDTO[];
     receivedRequests: IUserFriendDTO[];
     quizInvitations: IQuizInvitationDTO[];
     teamUsers: ITeamUserDTO[];

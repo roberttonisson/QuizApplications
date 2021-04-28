@@ -7,7 +7,7 @@ using Domain.Base;
 
 namespace BLL.App.DTO
 {
-    public class Team : DomainEntityId, IDomainEntityUser<AppUser>
+    public class Team : DomainEntityId
     {
         [Required] 
         public Guid QuizId { get; set; } = default!;
@@ -18,7 +18,7 @@ namespace BLL.App.DTO
         [MaxLength(32)]
         public string Name { get; set; } = default!;
 
-        public Guid AppUserId { get; set; }
+        public Guid? AppUserId { get; set; } = null;
         public AppUser? AppUser { get; set; }
         
         public ICollection<TeamUser>? TeamUsers { get; set; }

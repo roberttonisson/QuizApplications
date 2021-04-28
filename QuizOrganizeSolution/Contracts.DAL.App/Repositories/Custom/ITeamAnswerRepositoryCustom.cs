@@ -11,6 +11,7 @@ namespace Contracts.DAL.App.Repositories.Custom
 
     public interface ITeamAnswerRepositoryCustom<TTeamAnswer>
     {
+        Task<TTeamAnswer?> FirstExists(Guid teamId, Guid questionId, Guid? userId = null, bool noTracking = true);
     }
     
 }

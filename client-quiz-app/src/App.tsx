@@ -12,6 +12,9 @@ import FinishedQuizView from "./components/views/Quiz/FinishedQuizView";
 import MyQuizzes from "./components/views/Quiz/MyQuizzes";
 import UpcomingQuizView from "./components/views/Quiz/UpcomingQuizView";
 import FriendsView from "./components/views/Friends/FriendsView";
+import FriendQuizzes from "./components/views/Quiz/FriendQuizzes";
+import QuizGame from "./components/views/Quiz/QuizGame";
+import Footer from "./components/shared/Footer";
 
 const App = () => {
     const setData = (data: IJwtResponseDTO) => {
@@ -51,6 +54,9 @@ const App = () => {
                 <Route path="/myquizzes">
                     <MyQuizzes />
                 </Route>
+                <Route path="/friendquizzes">
+                    <FriendQuizzes />
+                </Route>
                 <Route path="/finishedquiz/:id">
                     <FinishedQuizView />
                 </Route>
@@ -59,6 +65,9 @@ const App = () => {
                 </Route>
                 <Route path="/editquiz/:id">
                     <EditQuiz />
+                </Route>
+                <Route path="/quizgame/:id">
+                    <QuizGame />
                 </Route>
                 <h1>Page not found 404</h1>
             </Switch>

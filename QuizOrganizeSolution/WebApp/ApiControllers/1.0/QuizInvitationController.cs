@@ -83,6 +83,27 @@ namespace WebApp.ApiControllers._1._0
             return NoContent();
 
         }
+        
+        // PUT: api/QuizInvitations/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
+        /// <summary>
+        /// Change existing QuizInvitation by given ID
+        /// </summary>
+        /// <param name="id">Given ID that we use to find the QuizInvitation from DB</param>
+        /// <param name="quizInvitation">DTO with new values tha we need to change</param>
+        /// <returns>Nothing</returns>
+        [HttpPut("accept/{id}")]
+        public async Task<IActionResult> PutQuizInvitationAddTeamUser(Guid id, QuizInvitation quizInvitation)
+        {
+            if (id != quizInvitation.Id)
+            {
+                return BadRequest();
+            }
+
+            return Ok(await _bll.QuizInvitations.AddWithTeamUser(quizInvitation));
+
+        }
 
         // POST: api/QuizInvitations
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for

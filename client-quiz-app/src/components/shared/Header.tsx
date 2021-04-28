@@ -19,23 +19,24 @@ const Header = () => {
         if (loggedIn) {
             return (
                 <ul className="navbar-nav">
-                    <li className="nav-item" style={{ paddingRight: "10px" }}>
+                    <li className="nav-item" style={{ paddingRight: "10px" , color: '#ac92d4'}}>
                         {jwt_decode<any>(appContext.data!.token!)['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']}
                     </li>
                     <li className="nav-item">
-                        <button className="btn btn-primary" onClick={(e) => logOut(e)}>Logout</button>
+                        <button className="btn button-bg-purple-light" onClick={(e) => logOut(e)}>Logout</button>
                     </li>
                 </ul>
             );
         }
 
         return (
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link to="/login">Login </Link>
+            <ul className="navbar-nav">,.
+                <li className="nav-item btn button-bg-purple-light">
+                    <Link to="/login" className="text-white">Login </Link>
                 </li>
-                <li className="nav-item" style={{ paddingLeft: "10px" }}>
-                    <Link to="/register">Register </Link>
+                &nbsp;&nbsp;
+                <li className="nav-item btn button-bg-purple-light" style={{ paddingLeft: "10px" }}>
+                    <Link to="/register" className="text-white button-bg-purple-light">Register </Link>
                 </li>
             </ul>
         );
@@ -45,24 +46,28 @@ const Header = () => {
             return (
                 <>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/createQuiz">Create QUIZ</Link>
+                        <Link to="/" className="text-white">Home</Link>
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/myQuizzes">My quizzes</Link>
+                        <Link to="/createQuiz" className="text-white">Create QUIZ</Link>
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/friends">Friends</Link>
+                        <Link to="/myQuizzes" className="text-white">My quizzes</Link>
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/">Home</Link>
+                        <Link to="/friends" className="text-white">Friends</Link>
                     </li>
+                    <li className="nav-item" style={{ paddingRight: "10px" }}>
+                        <Link to="/friendquizzes" className="text-white">Quizzes </Link>
+                    </li>
+
                 </>
             );
         }
 
         return (
             <li className="nav-item" style={{ paddingRight: "10px" }}>
-                <Link to="/">Home</Link>
+                <Link to="/" className="text-white">Home</Link>
             </li>
         );
     }
@@ -76,9 +81,8 @@ const Header = () => {
 
     return (
         <header>
-            <nav className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <nav className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 skippy">
                 <div className="container">
-                    <a className="navbar-brand" href="/">WebApp</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

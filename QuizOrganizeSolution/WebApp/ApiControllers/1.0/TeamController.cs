@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BLL.App.DTO;
+using BLL.App.DTO.CustomDTO;
 using Contracts.BLL.App;
 using Microsoft.AspNetCore.Mvc;
 
@@ -95,6 +96,22 @@ namespace WebApp.ApiControllers._1._0
         {
             _bll.Teams.Add(team);
             await _bll.SaveChangesAsync();
+
+            return Ok(team);
+        }
+        
+        // POST: api/Teams
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
+        /// <summary>
+        /// Add a new Team to and its members invitations to the DB.
+        /// </summary>
+        /// <param name="addTeamDto">DTO with the values for the records that will be inserted into DB.</param>
+        /// <returns>Team that was added to the DB.</returns>
+        [HttpPost("members")]
+        public async Task<ActionResult<Team>> PostTeam(AddTeamDTO addTeamDto)
+        {
+            var team = await _bll.Teams.AddTeamWithMembers(addTeamDto);
 
             return Ok(team);
         }

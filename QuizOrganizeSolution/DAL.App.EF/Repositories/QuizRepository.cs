@@ -35,7 +35,16 @@ namespace DAL.App.EF.Repositories
                 .Where(a => a.Id == id)
                 .Include(s => s.QuizTopics!)
                 .ThenInclude(t => t.TopicQuestions)
-                .ThenInclude(a => a.QuestionAnswers);
+                .ThenInclude(a => a.QuestionAnswers)
+                .Include(a => a.Teams)
+                .ThenInclude(b => b.TeamUsers)
+                .ThenInclude(c=> c.AppUser)
+                .Include(a => a.Teams)
+                .ThenInclude(b => b.AppUser)
+                .Include(a => a.Teams)
+                .ThenInclude(b => b.TeamAnswers)
+                .ThenInclude(c => c.TopicQuestion);
+                
             
             var domainEntity = await query.FirstOrDefaultAsync();
             var result = Mapper.Map(domainEntity);

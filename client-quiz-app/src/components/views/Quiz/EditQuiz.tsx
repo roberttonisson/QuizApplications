@@ -2,12 +2,12 @@ import { TextField } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BaseService } from "../../../services/BaseService";
-import { QuestionType } from "../../../base/QuestionType";
 import { AppContext } from "../../../context/AppContext";
 import { IQuestionAnswerDTO } from "../../../domain/IQuestionAnswerDTO";
 import { IQuizDTO } from "../../../domain/IQuizDTO";
 import { IQuizTopicDTO } from "../../../domain/IQuizTopicDTO";
 import { ITopicQuestionDTO } from "../../../domain/ITopicQuestionDTO";
+import { QuestionType } from "../../../base/QuestionType";
 
 
 
@@ -42,6 +42,7 @@ const EditQuiz = () => {
         if (topic.topicQuestions) {
             console.log(topic)
             setSelectedQuestions(topic.topicQuestions)
+            setSelectedAnswers([]);
         }
 
     };
@@ -79,7 +80,7 @@ const EditQuiz = () => {
         console.log(question)
         if (question.questionAnswers) {
             setSelectedAnswers(question.questionAnswers)
-            setSelectedAnswer({ ...selectedAnswer, topicQuestionId: question.id })
+            setSelectedAnswer({ answer: '', correct: false, topicQuestionId: '' } as IQuestionAnswerDTO )
         }
     };
 
@@ -111,6 +112,7 @@ const EditQuiz = () => {
                     })
             })
         setSelectedQuestion({ ...selectedQuestion, id: '' })
+        
 
     };
 
@@ -125,15 +127,16 @@ const EditQuiz = () => {
             .then(d => {
                 data()
                 setSelectedQuestions([...selectedQuestions, d!])
+                setSelectedAnswers([]);
             });
     };
 
     function editAnswer(e: React.ChangeEvent<HTMLInputElement>, checkBox: boolean) {
         var { name, value } = e.target;
         if (checkBox) {
-            setSelectedAnswer({ ...selectedAnswer, [name]: e.target.checked });
+            setSelectedAnswer({ ...selectedAnswer, [name]: e.target.checked , topicQuestionId: selectedQuestion.id});
         } else {
-            setSelectedAnswer({ ...selectedAnswer, [name]: value });
+            setSelectedAnswer({ ...selectedAnswer, [name]: value , topicQuestionId: selectedQuestion.id});
         }
     }
 
@@ -143,9 +146,9 @@ const EditQuiz = () => {
     }
     function correctAnswer(correct: boolean) {
         if (correct) {
-            return <>Correct answer</>
+            return <>Õige vastus</>
         }
-        return <>False answer</>
+        return <>Vale vastus</>
     }
 
     function checkSelectedQuestion(question: ITopicQuestionDTO) {
@@ -157,19 +160,19 @@ const EditQuiz = () => {
                         <p></p>
                         <form className="form-group">
                             <div className="mb-3">
-                                <label className="form-label">Question text</label>
+                                <label className="form-label">Tekst:</label>
                                 <input value={selectedQuestion.text} type="text" name="text" className="form-control" id="formTopic" onChange={e => editSelectedQuestion(e)} />
                             </div>
                             <div className="mb-3">
-                                <label className="form-label">Question</label>
+                                <label className="form-label">Küsimus</label>
                                 <input value={selectedQuestion.question} type="text" name="question" className="form-control" id="formTopic" onChange={e => editSelectedQuestion(e)} />
                             </div>
                             <div className="mb-3">
-                                <label className="form-label">Max points:</label>
+                                <label className="form-label">Maksimum punktid:</label>
                                 <input value={selectedQuestion.points} type="number" name="points" className="form-control" id="formTimeLimit" onChange={e => editSelectedQuestion(e)} />
                             </div>
                             <div className="mb-3">
-                                <label className="form-label">Answers:</label>
+                                <label className="form-label">Vastused:</label>
                             </div>
                             {selectedAnswers.map((answer, i) => (
                                 <div>{answer.answer}({correctAnswer(answer.correct)})</div>
@@ -177,11 +180,11 @@ const EditQuiz = () => {
                             <input value={selectedAnswer.answer} type="text" name="answer" className="form-control" id="formTopic" onChange={e => editAnswer(e, false)} />
                             <div className="form-check">
                                 <input name="correct" type="checkbox" className="form-check-input" id="exampleCheck1" onChange={e => editAnswer(e, true)} />
-                                <label className="form-check-label" htmlFor="exampleCheck1">Correct answer?</label>
+                                <label className="form-check-label" htmlFor="exampleCheck1">Õige vastus?</label>
                             </div>
-                            <button type="button" className="btn btn-success d-block" onClick={() => addAnswer()}>Add a answer</button>
+                            <button type="button" className="btn button-bg-cyan d-block" onClick={() => addAnswer()}>Lisa uus vastus</button>
                             <p></p>
-                            <button type="button" className="btn btn-primary" onClick={editQuestion}>Save question</button>
+                            <button type="button" className="btn button-bg-purple-dark" onClick={editQuestion}>Salvesta küsimus</button>
                             <p></p>
                         </form>
                     </div>
@@ -224,7 +227,7 @@ const EditQuiz = () => {
                                     ))}
                                     <p></p>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-success" onClick={e => selectQuestion(question)}>Edit</button>
+                                        <button type="button" className="btn button-bg-purple-dark" onClick={e => selectQuestion(question)}>Muuda</button>
                                         {checkSelectedQuestion(question)}
                                     </div>
 
@@ -233,10 +236,10 @@ const EditQuiz = () => {
                                 <p></p>
                             </>
                         ))}
-                        <button type="button" className="btn btn-success" onClick={createQuestion}>Add a question</button>
+                        <button type="button" className="btn button-bg-purple-dark" onClick={createQuestion}>Add a question</button>
                         <div className="modal-footer">
                             
-                            <button type="button" className="btn btn-primary" onClick={editTopic}>Save topic</button>
+                            <button type="button" className="btn button-bg-cyan" onClick={editTopic}>Salvesta plokk</button>
                         </div>
                     </form>
                     <p></p>
@@ -247,19 +250,19 @@ const EditQuiz = () => {
 
     function navTopicButton(topic: IQuizTopicDTO){
         if (topic.id === selectedTopic.id) {
-            return(<button type="button" className="btn btn-primary" onClick={e => selectTopic(topic)}>{topic.topic}</button>)
+            return(<button type="button" className="btn button-bg-purple-dark" onClick={e => selectTopic(topic)}>{topic.topic}</button>)
         }
-        return(<button type="button" className="btn btn-outline-primary" onClick={e => selectTopic(topic)}>{topic.topic}</button>)
+        return(<button type="button" className="btn button-outline-purple-dark" onClick={e => selectTopic(topic)}>{topic.topic}</button>)
     }
 
     return (
         <div className="container">
-            <h3>Edit {quizData.title}</h3>
+            <h3>Redigeeri {quizData.title}</h3>
             <div className="btn-group" role="group" aria-label="Basic outlined example">
                 {quizData.quizTopics!.map((topic, i) => (
                     <>{navTopicButton(topic)}</>
                 ))}
-                <button type="button" className="btn btn-success" onClick={createTopic}>Add a question block</button>
+                <button type="button" className="btn button-bg-cyan" onClick={createTopic}>Lisa uus plokk</button>
             </div>
             <p></p>
             {checkSelectedTopic()}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xm+ukHrLeRZtJAYbK21vZ3KdT/x+/7XwPtnrqzDLjvNJy/oHPG+jfHgvLtUO0EnesqroaUyWcT52mYkvaHiSQA==",
+  "dgSpecHash": "mlrbPugJnxLHzheUdIIMHbI+ONeCSj3Z8A4G6RZEd10YR+4PSDwEviNXFUmiGVt6VKNnlbByFiRbkiH6Qj07ow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rober\\Documents\\Proge\\QuizOrganizeSolution\\DAL.Base\\DAL.Base.csproj",
+  "projectFilePath": "C:\\Users\\rober\\Documents\\Proge\\QuizOrganize\\QuizOrganizeSolution\\DAL.Base\\DAL.Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rober\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\rober\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.5\\microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",

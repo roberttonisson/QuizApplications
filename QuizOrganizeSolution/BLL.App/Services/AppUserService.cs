@@ -28,7 +28,7 @@ namespace BLL.App.Services
 
         public async Task<AppUser> GetUserWithFriendsCollections(Guid userId, bool noTracking = true)
         {
-            var user = await Repository.GetUserWithQuizCollections(userId, noTracking);
+            var user = await Repository.GetUserWithFriendsCollections(userId, noTracking);
 
             return Mapper.Map(user);
         }

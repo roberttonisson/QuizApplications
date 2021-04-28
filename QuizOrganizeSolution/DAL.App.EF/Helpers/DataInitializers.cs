@@ -276,6 +276,10 @@ namespace DAL.App.EF.Helpers
             var users = new (string email, string password, string firstName, string lastName )[]
             {
                 ("admin@quiz.com", "Admin123@", "Admin", "One"),
+                ("admin2@quiz.com", "Admin123@", "Admin2", "Two"),
+                ("admin3@quiz.com", "Admin123@", "Admin3", "Three"),
+                ("admin4@quiz.com", "Admin123@", "Admin4", "Four"),
+                ("admin5@quiz.com", "Admin123@", "Admin5", "Five"),
             };
 
             foreach (var userInfo in users)

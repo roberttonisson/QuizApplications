@@ -11,7 +11,7 @@ namespace Contracts.DAL.App.Repositories.Custom
 
     public interface IUserFriendRepositoryCustom<TUserFriend>
     {
-        
+        Task<TUserFriend> GetExistingRequest(BLL.App.DTO.UserFriend userFriend, Guid? userId = null, bool noTracking = true);
     }
     
 }

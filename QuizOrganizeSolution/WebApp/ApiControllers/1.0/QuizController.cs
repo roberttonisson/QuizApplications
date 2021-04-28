@@ -49,13 +49,26 @@ namespace WebApp.ApiControllers._1._0
         /// <summary>
         /// Get the list of all Quizzes .
         /// </summary>
-        /// <returns>List of Quizzes</returns>
+        /// <returns>User with quizzes</returns>
         [HttpGet("userQuizzes")]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUserWithQuizzes()
         {
             var user = (await _bll.AppUsers.GetUserWithQuizCollectionsCustomUser(User.UserGuidId()));
             
             return Ok(user);
+        }
+        
+        // GET: api/Quiz
+        /// <summary>
+        /// Get the list of all frinds quizzes
+        /// </summary>
+        /// <returns>List of Quizzes</returns>
+        [HttpGet("friendQuizzes")]
+        public async Task<ActionResult<IEnumerable<Quiz>>> GetFriendQuizzes()
+        {
+            var quizzes = await _bll.Quizzes.GetFriendQuizzes(User.UserGuidId());
+            
+            return Ok(quizzes);
         }
 
         // GET: api/Quiz/5
@@ -97,7 +110,7 @@ namespace WebApp.ApiControllers._1._0
             await _bll.Quizzes.UpdateAsync(quiz);
             await _bll.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(quiz);
 
         }
 

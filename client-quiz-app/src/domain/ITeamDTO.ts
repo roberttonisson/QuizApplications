@@ -6,6 +6,8 @@ import { ITeamAnswerDTO } from './ITeamAnswerDTO';
 import { ITeamUserDTO } from './ITeamUserDTO';
 
 export interface ITeamDTO extends IBaseDomain {
+    name: string;
+
     quizId: string;
     quiz?: IQuizDTO;
 

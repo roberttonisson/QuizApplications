@@ -12,5 +12,7 @@ namespace Contracts.BLL.App.Services
     {
         Task<IEnumerable<AppUser>> SearchUsers(string search, Guid? userId = null,
             bool noTracking = true);
+        Task<UserFriend> SendFriendRequest(UserFriend userFriend, Guid? userId = null,
+            bool noTracking = true);
     }
 }

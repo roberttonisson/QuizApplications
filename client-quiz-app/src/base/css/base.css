@@ -1,0 +1,70 @@
+.skippy {
+    background-color: #563d7c;
+}
+.text-skippy {
+    color: #482877;
+}
+.text-green {
+    color: #088f26;
+}
+.text-skippy-light {
+    color: #ac92d4;
+}
+.border-white {
+    border-color: white;
+}
+
+
+.skippy-light {
+    background-color: #ac92d4;
+}
+.jumbo {
+    background-color: #f1d3ff;
+}
+
+.jumbo-bottom {
+    border-color: #482877;
+}
+
+.button-bg-purple-light {
+    background-color: #ac92d4;
+    border-color: #ac92d4;
+}
+.button-bg-purple-light:hover {
+    background-color: #9c76d6;
+    border-color: #ac92d4;
+}
+
+.button-bg-cyan {
+    background-color: #6debe9;
+    border-color: #482877;
+    color: #482877;
+    
+}
+.button-bg-cyan:hover{
+    background-color: #128a86;
+    border-color: #482877;
+    color: #482877;
+   
+}
+
+.button-bg-purple-dark {
+    background-color: #563d7c;
+    border-color: #563d7c;
+    color: white;
+}
+.button-outline-purple-dark {
+    background-color: white;
+    border-color: #563d7c;
+    color: #482877;
+}
+.button-outline-purple-dark:hover {
+    background-color: #ac92d4;
+    border-color: #563d7c;
+    color: #482877;
+}
+
+html, body {
+    background-color: #ac92d4;
+    color: #482877;
+}

@@ -88,15 +88,14 @@ namespace WebApp.ApiControllers._1._0
         /// <summary>
         /// Add a new TeamAnswer to the DB.
         /// </summary>
-        /// <param name="teamAnswer">DTO with the values for the record tha will be inserted into DB.</param>
+        /// <param name="teamAnswers">DTO with the values for the record tha will be inserted into DB.</param>
         /// <returns>DTO with the values from the record that was added to the DB.</returns>
         [HttpPost]
-        public async Task<ActionResult<TeamAnswer>> PostTeamAnswer(TeamAnswer teamAnswer)
+        public async Task<ActionResult<TeamAnswer>> PostTeamAnswer(TeamAnswer[] teamAnswers)
         {
-            _bll.TeamAnswers.Add(teamAnswer);
-            await _bll.SaveChangesAsync();
+            var ret = _bll.TeamAnswers.AddTeamAnswers(teamAnswers);
 
-            return Ok(teamAnswer);
+            return Ok(ret);
         }
 
         // DELETE: api/TeamAnswers/5
