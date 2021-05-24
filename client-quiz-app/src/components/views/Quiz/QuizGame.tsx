@@ -153,7 +153,7 @@ const QuizGame = () => {
                     </div>
                     <div className="col">
                         <p className="text-center">_____</p>
-                        <p className="text-center">Insert answers:</p>
+                        <p className="text-center">Sisesta vastused:</p>
                         {quiz.quizTopics?.map((topic, i) => (
                             <>
                                 <button type="button" className="btn button-outline-purple-dark btn-block" data-toggle="modal" data-target="#exampleModal" onClick={e => selectTopic(topic)}>{topic.topic}</button>
@@ -231,7 +231,7 @@ const QuizGame = () => {
     function insertAnswerModal(topic: IQuizTopicDTO) {
         return (
             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
+                <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Sisesta tiimi vastused - {topic.topic}</h5>
@@ -251,7 +251,7 @@ const QuizGame = () => {
                             <form>
                                 {answers.map((answerDTO, i) => (
                                     <>
-                                        <div className="font-weight-bold">{answerDTO.topicQuestion.question}</div>
+                                        <div className="font-weight-bold">Küsimus {i+1}# {answerDTO.topicQuestion.question}({answerDTO.topicQuestion.points}p)</div>
                                         <textarea className="form-control"
                                             id="standard-basic"
                                             name="answer"

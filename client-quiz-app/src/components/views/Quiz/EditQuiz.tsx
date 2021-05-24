@@ -84,7 +84,7 @@ const EditQuiz = () => {
         }
     };
 
-    function editSelectedQuestion(e: React.ChangeEvent<HTMLInputElement>) {
+    function editSelectedQuestion(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) {
         var { name, value } = e.target;
         if (isNaN(+value)) {
             setSelectedQuestion({ ...selectedQuestion, [name]: value });
@@ -161,7 +161,7 @@ const EditQuiz = () => {
                         <form className="form-group">
                             <div className="mb-3">
                                 <label className="form-label">Tekst:</label>
-                                <input value={selectedQuestion.text} type="text" name="text" className="form-control" id="formTopic" onChange={e => editSelectedQuestion(e)} />
+                                <textarea className="form-control" id="exampleFormControlTextarea1" rows={4} value={selectedQuestion.text} name="text" onChange={e => editSelectedQuestion(e)}></textarea>
                             </div>
                             <div className="mb-3">
                                 <label className="form-label">Küsimus</label>
@@ -175,8 +175,9 @@ const EditQuiz = () => {
                                 <label className="form-label">Vastused:</label>
                             </div>
                             {selectedAnswers.map((answer, i) => (
-                                <div>{answer.answer}({correctAnswer(answer.correct)})</div>
+                                <p>{answer.answer}({correctAnswer(answer.correct)})</p>
                             ))}
+                            <p></p>
                             <input value={selectedAnswer.answer} type="text" name="answer" className="form-control" id="formTopic" onChange={e => editAnswer(e, false)} />
                             <div className="form-check">
                                 <input name="correct" type="checkbox" className="form-check-input" id="exampleCheck1" onChange={e => editAnswer(e, true)} />
@@ -205,23 +206,23 @@ const EditQuiz = () => {
                     <p></p>
                     <form className="form-group">
                         <div className="mb-3">
-                            <label className="form-label">Topic name</label>
+                            <label className="form-label">Teema nimi</label>
                             <input value={selectedTopic.topic} type="text" name="topic" className="form-control" id="formTopic" onChange={e => editSelectedTopic(e)} />
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Time limit in seconds:</label>
+                            <label className="form-label">Ajalimiit sekundites:</label>
                             <input value={selectedTopic.timeLimit} type="number" name="timeLimit" className="form-control" id="formTimeLimit" onChange={e => editSelectedTopic(e)} />
                         </div>
                         <div>
-                            <h4>Questions:</h4>
+                            <h4>Küsimused:</h4>
                         </div>
                         {selectedQuestions.map((question, i) => (
                             <>
                                 <div className="container border rounded">
-                                    <h5>Question #{i + 1}</h5>
+                                    <h5>Küsimus #{i + 1}</h5>
                                     <div>{question.text}</div>
                                     <h6 className="fw-bold">{question.question}({question.points}p)</h6>
-                                    <h6 className="fw-bold">Answers:</h6>
+                                    <h6 className="fw-bold">Vastused:</h6>
                                     {question.questionAnswers?.map((answer, index) => (
                                         <div className="container">{answer.answer}: ({correctAnswer(answer.correct)})</div>
                                     ))}
@@ -236,7 +237,7 @@ const EditQuiz = () => {
                                 <p></p>
                             </>
                         ))}
-                        <button type="button" className="btn button-bg-purple-dark" onClick={createQuestion}>Add a question</button>
+                        <button type="button" className="btn button-bg-purple-dark" onClick={createQuestion}>Lisa uus küsimus</button>
                         <div className="modal-footer">
                             
                             <button type="button" className="btn button-bg-cyan" onClick={editTopic}>Salvesta plokk</button>
@@ -250,9 +251,9 @@ const EditQuiz = () => {
 
     function navTopicButton(topic: IQuizTopicDTO){
         if (topic.id === selectedTopic.id) {
-            return(<button type="button" className="btn button-bg-purple-dark" onClick={e => selectTopic(topic)}>{topic.topic}</button>)
+            return(<button type="button" className="btn button-bg-purple-dark" onClick={e => selectTopic(topic)}>{shortTopic(topic)}</button>)
         }
-        return(<button type="button" className="btn button-outline-purple-dark" onClick={e => selectTopic(topic)}>{topic.topic}</button>)
+        return(<button type="button" className="btn button-outline-purple-dark" onClick={e => selectTopic(topic)}>{shortTopic(topic)}</button>)
     }
 
     return (
@@ -270,6 +271,13 @@ const EditQuiz = () => {
         </div>
 
     );
+
+    function shortTopic(topic: IQuizTopicDTO) {
+        if (topic.topic.length > 16) {
+            return (topic.topic.slice(0, 14)+ "...")
+        }
+        return topic.topic
+    }
     
 
 

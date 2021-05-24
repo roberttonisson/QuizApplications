@@ -37,22 +37,22 @@ const Login = () => {
     return (
         <>
             <div className="container">
-                <h1>Log in</h1>
+                <h1>Sisselogimine</h1>
                 <div className="row">
                     <div className="col-md-4">
-                        <h4>Use a local account to log in.</h4>
+                        <h4>Logi oma kasutajaga sisse</h4>
 
                         <form className="form-group" onSubmit={handleSubmit}>
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">Meiliaadress</label>
                             <input className="form-control" type="email" name="email" onChange={(e) => handleChange(e.target)} />
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Parool</label>
                             <input
                                 className="form-control"
                                 type="password"
                                 name="password"
                                 onChange={(e) => handleChange(e.target)}
                             />
-                            <button className="btn button-bg-purple-dark" type="submit">Log in</button>
+                            <button className="btn button-bg-purple-dark" type="submit">Logi sisse</button>
                         </form>
                     </div>
                 </div>

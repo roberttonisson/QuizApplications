@@ -28,40 +28,40 @@ const Register = () => {
     return (
         <>
             <div className="container">
-            <h1>Register</h1>
+            <h1>Registreeri</h1>
                 <div className="row">
                     <div className="col-md-4">
 
                         <form onSubmit={handleSubmit}>
-                            <label>Email</label>
+                            <label>Meiliaadress</label>
                             <input
                                 onChange={(e) => handleChange(e.target)}
                                 className="form-control"
                                 type="email"
                                 name="email"
                             />
-                            <label >Password</label>
+                            <label >Parool</label>
                             <input
                                 onChange={(e) => handleChange(e.target)}
                                 className="form-control"
                                 type="password"
                                 name="password"
                             />
-                First name
+                Eesnimi
                 <input
                                 onChange={(e) => handleChange(e.target)}
                                 className="form-control"
                                 type="text"
                                 name="firstName"
                             />
-                Last name
+                Perenimi
                 <input
                                 onChange={(e) => handleChange(e.target)}
                                 className="form-control"
                                 type="text"
                                 name="lastName"
                             />
-                            <button className="btn button-bg-purple-dark" type="submit">Register</button>
+                            <button className="btn button-bg-purple-dark" type="submit">Registreeru</button>
                         </form>
                     </div>
                 </div>

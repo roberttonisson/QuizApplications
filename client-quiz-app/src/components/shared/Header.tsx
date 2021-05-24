@@ -23,7 +23,7 @@ const Header = () => {
                         {jwt_decode<any>(appContext.data!.token!)['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']}
                     </li>
                     <li className="nav-item">
-                        <button className="btn button-bg-purple-light" onClick={(e) => logOut(e)}>Logout</button>
+                        <button className="btn button-bg-purple-light" onClick={(e) => logOut(e)}>Logi välja</button>
                     </li>
                 </ul>
             );
@@ -32,11 +32,11 @@ const Header = () => {
         return (
             <ul className="navbar-nav">,.
                 <li className="nav-item btn button-bg-purple-light">
-                    <Link to="/login" className="text-white">Login </Link>
+                    <Link to="/login" className="text-white">Logi sisse </Link>
                 </li>
                 &nbsp;&nbsp;
                 <li className="nav-item btn button-bg-purple-light" style={{ paddingLeft: "10px" }}>
-                    <Link to="/register" className="text-white button-bg-purple-light">Register </Link>
+                    <Link to="/register" className="text-white button-bg-purple-light">Registreeri </Link>
                 </li>
             </ul>
         );
@@ -46,19 +46,19 @@ const Header = () => {
             return (
                 <>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/" className="text-white">Home</Link>
+                        <Link to="/" className="text-white">Avaleht &nbsp;&nbsp;</Link>                        
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/createQuiz" className="text-white">Create QUIZ</Link>
+                        <Link to="/createQuiz" className="text-white">Uus mäng &nbsp;&nbsp;</Link>
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/myQuizzes" className="text-white">My quizzes</Link>
+                        <Link to="/myQuizzes" className="text-white">Minu mängud &nbsp;&nbsp;</Link>
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/friends" className="text-white">Friends</Link>
+                        <Link to="/friends" className="text-white">Sõbrad &nbsp;&nbsp;</Link>
                     </li>
                     <li className="nav-item" style={{ paddingRight: "10px" }}>
-                        <Link to="/friendquizzes" className="text-white">Quizzes </Link>
+                        <Link to="/friendquizzes" className="text-white">Otsi mänge &nbsp;&nbsp;</Link>
                     </li>
 
                 </>

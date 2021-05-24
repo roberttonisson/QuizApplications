@@ -51,7 +51,7 @@ const FriendsView = () => {
             )
         }
         return (
-            <button type="button" className="btn btn-success btn-sm float-right" onClick={e => addUser(user)}>Lisa sõbraks</button>
+            <button type="button" className="btn btn-success btn-sm float-right" onClick={e => addUser(user)}>Lisa</button>
         )
     }
 
@@ -192,7 +192,7 @@ const FriendsView = () => {
                                 <label className="form-label">Otsi sõpra:</label>
                                 <input value={search} type="text" name="search" className="form-control" onChange={e => editSearch(e)} />
                                 <p></p>
-                                <button type="button" className="btn btn-primary" onClick={e => searchUsers()}>Otsi</button>
+                                <button type="button" className="btn button-bg-purple-dark" onClick={e => searchUsers()}>Otsi</button>
                                 <p></p>
                             </div>
                             {searchResult.map((result, i) => (

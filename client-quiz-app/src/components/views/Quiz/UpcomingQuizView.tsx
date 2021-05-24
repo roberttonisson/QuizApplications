@@ -140,7 +140,7 @@ const UpcomingQuizView = () => {
         <div className="container">
             <div className="jumbotron jumbo">
                 <h1 className="display-4">{quiz.title}</h1>
-                <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <p className="lead">Väga mimtekülgsete teemadega ja küsimustega mälumäng. Tunned, et tahad ennast ja oma tiimi proovile panna ning uusi teadmisi saada? Siis registreerige kohe ja tulge määratud kuupäeval mängima. Seltsis segasem.</p>
                 <hr className="my-4"></hr>
                 <p>Küsimuseplokke: {getTotalQuestionBlocks()}</p>
                 <p>Küsimusi kokku: {getTotalQuestions()}</p>
